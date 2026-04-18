@@ -1,0 +1,26 @@
+name: IoT Firewall CI
+
+# 1. When to run
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+# 2. What to do
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest  # Uses a clean Linux virtual machine
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4  # Downloads your code to the runner
+
+      - name: Install Dependencies
+        run: sudo apt-get update && sudo apt-get install -y build-essential
+
+      - name: Compile Application
+        run: make  # Runs the 'all' rule in your Makefile
+
+      - name: Run Quality Tests
+        run: make test  # Runs the 'test' rule in your Makefile

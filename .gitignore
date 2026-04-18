@@ -1,0 +1,16 @@
+# Compiled Binaries
+iot_firewall
+test_runner
+
+# Objects and Temp files
+obj/
+*.o
+*.out
+
+# Logs and Local Data
+*.log
+blacklist.txt
+
+# IDE files
+.vscode/
+.idea/
