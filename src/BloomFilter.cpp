@@ -1,6 +1,7 @@
 #include "BloomFilter.h"
 #include "MurmurHash3.h"
 #include <cstdint>
+#include <mutex>
 
 
 BloomFilter::BloomFilter(size_t s, int h) : size(s), num_hashes(h) {
