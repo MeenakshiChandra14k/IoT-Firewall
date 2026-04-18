@@ -16,11 +16,11 @@ all: $(TARGET)
 
 # Build the main app
 $(TARGET): $(OBJECTS) $(OBJ_DIR)/main.o
-	$(CXX) $(CXXFLAGS) -o $(BIN_DIR)/$@ $^
+	$(CXX) $(CXXFLAGS) -o $(BIN_DIR)/$@ $^ -pthread
 
 # Build the test runner
 test: $(OBJECTS) $(OBJ_DIR)/test_bloom.o
-	$(CXX) $(CXXFLAGS) -o $(BIN_DIR)/$(TEST_TARGET) $^
+	$(CXX) $(CXXFLAGS) -o $(BIN_DIR)/$(TEST_TARGET) $^ -pthread
 	./$(TEST_TARGET)
 
 # Compile source files
