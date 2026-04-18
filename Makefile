@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c++17 -O3 -Wall -Wextra -Iinclude
+CXXFLAGS = -std=c++17 -O3 -Wall -Wextra -Iinclude -pthread
 SRC_DIR = src
 OBJ_DIR = obj
 BIN_DIR = .
