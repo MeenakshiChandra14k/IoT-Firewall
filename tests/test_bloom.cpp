@@ -11,6 +11,8 @@ void test_accuracy() {
     assert(bf.contains(ip) == true);
     std::cout << "Test 1 Passed: Zero false negatives." << std::endl;
 
+
+
     int false_positives = 0;
     int test_count = 1000;
 
@@ -24,6 +26,10 @@ void test_accuracy() {
     double rate = (double)false_positives / test_count * 100 ;
     std::cout << "Test 2 : False Positives Rate is " << rate << "%" << std::endl;
     assert(rate < 5.0);
+
+    bf.remove(ip);
+    assert(bf.contains(ip) == false);
+    std::cout<< "Test 3: Remove Test: Passed" << std::endl;
 
 }
 
